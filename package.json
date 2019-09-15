@@ -1,6 +1,6 @@
 {
   "name": "openapi-nodegen-config-helper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "openapi-nodegen-config-helper",
   "main": "index.js",
   "scripts": {
