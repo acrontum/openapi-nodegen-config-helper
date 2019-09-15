@@ -1,2 +1,2 @@
-const helper = require('./index')
+const helper = require('./index.js')
 helper.configReadme()

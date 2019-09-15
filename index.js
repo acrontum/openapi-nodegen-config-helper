@@ -30,8 +30,8 @@ VARIABE=VALUE. You can use the provived .env-example as a template.
     return process.env[environmentVariable] || defaultValue;
   },
 
-  /**
-   * Creates a readme.config.md file
-   */
-  configReadme: configReadme
+  // /**
+  //  * WIP: Creates a readme.config.md file
+  //  */
+  // configReadme: configReadme
 }

@@ -1,11 +1,8 @@
 {
   "name": "openapi-nodegen-config-helper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "openapi-nodegen-config-helper",
   "main": "index.js",
-  "bin": {
-    "openapi-nodegen-config-helper": "./cli.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

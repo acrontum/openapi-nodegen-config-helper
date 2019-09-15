@@ -18,18 +18,13 @@ module.exports = () => {
   addLine('## Environment variables descriptions')
 
   Object.keys(obj).forEach((k) => {
-    if (obj[k] && !Array.isArray(obj[k]) && typeof obj[k] === 'object') {
-      traverse(obj[k])
-    } else {
-      // Do something with obj[k]
-      if (k.indexOf('_docs') !== -1 && Array.isArray(obj[k])) {
-        let requireOptional = (obj[k][1] === true) ? '(REQUIRED)' : '(OPTIONAL)'
-        addLine('__*' + requireOptional + '  ' + obj[k][0] + ':*__ ')
-        addLine(' ')
-        addLine(obj[k][2])
-        addLine(' ')
-        addLine(' ')
-      }
+    if (k.indexOf('_docs') !== -1 && Array.isArray(obj[k])) {
+      let requireOptional = (obj[k][1] === true) ? '(REQUIRED)' : '(OPTIONAL)'
+      addLine('__*' + requireOptional + '  ' + obj[k][0] + ':*__ ')
+      addLine(' ')
+      addLine(obj[k][2])
+      addLine(' ')
+      addLine(' ')
     }
   })
 }
