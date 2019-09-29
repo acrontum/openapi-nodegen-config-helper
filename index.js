@@ -1,4 +1,4 @@
-const configReadme = require('./configReadme')
+// const configReadme = require('./configReadme')
 module.exports = {
   /**
    * Ensures that the given string representation of the envVar exists.
