@@ -1,4 +1,3 @@
-// const configReadme = require('./configReadme')
 module.exports = {
   /**
    * Ensures that the given string representation of the envVar exists.
@@ -28,10 +27,5 @@ VARIABE=VALUE. You can use the provived .env-example as a template.
    */
   withDefault: (environmentVariable, defaultValue) => {
     return process.env[environmentVariable] || defaultValue;
-  },
-
-  // /**
-  //  * WIP: Creates a readme.config.md file
-  //  */
-  // configReadme: configReadme
+  }
 }

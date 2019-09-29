@@ -1,6 +1,6 @@
 {
   "name": "openapi-nodegen-config-helper",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "openapi-nodegen-config-helper",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/acrontum/openapi-nodegen-config-helper/issues"
   },
-  "homepage": "https://github.com/acrontum/openapi-nodegen-config-helper#readme",
-  "dependencies": {
-    "fs-extra": "^8.1.0"
-  }
+  "homepage": "https://github.com/acrontum/openapi-nodegen-config-helper#readme"
 }
