@@ -1,11 +1,46 @@
-module.exports = {
+const self = {
+  /**
+   * Casts to boolean or number values of input strings
+   */
+  returnValue: (value) => {
+    if (value === 'true') {
+      return true
+    }
+    if (value === 'false') {
+      return false
+    }
+    if (!isNaN(value)) {
+      return Number(value)
+    }
+    if (value === 'undefined') {
+      return undefined
+    }
+    if (value === 'null') {
+      return null
+    }
+    if (typeof value === 'string') {
+      try {
+        return JSON.parse(value)
+      } catch (e) {
+        if (value === '\'false\'' || value === '"false"') {
+          return 'false'
+        }
+        if (value === '\'true\'' || value === '"true"') {
+          return 'true'
+        }
+        return value
+      }
+    }
+    return value
+  },
+
   /**
    * Ensures that the given string representation of the envVar exists.
    * @param environmentVariable
-   * @returns {string | any}
+   * @returns {string | number | boolean}
    */
   required: (environmentVariable) => {
-    const value = process.env[environmentVariable];
+    const value = process.env[environmentVariable]
     if (!value) {
       console.error(`
 Required environment variable ${environmentVariable} is not defined.
@@ -13,10 +48,10 @@ Required environment variable ${environmentVariable} is not defined.
 During development, you can configure all environment variables by
 placing an .env file into the project root, with lines of the form
 VARIABE=VALUE. You can use the provived .env-example as a template.
-`);
-      process.exit(1);
+`)
+      process.exit(1)
     }
-    return value;
+    return self.returnValue(value)
   },
 
   /**
@@ -26,6 +61,8 @@ VARIABE=VALUE. You can use the provived .env-example as a template.
    * @returns {string | any | *}
    */
   withDefault: (environmentVariable, defaultValue) => {
-    return process.env[environmentVariable] || defaultValue;
+    return self.returnValue(process.env[environmentVariable]) || defaultValue
   }
 }
+
+module.exports = self
