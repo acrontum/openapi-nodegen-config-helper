@@ -1,6 +1,8 @@
 # openapi-nodegen-config-helper
 
-Used within the openapi-nodegen to ensure environment variables are set or if not with a default value.
+Used within the generate-it but easily used in other tools. Ensure environment variables are set or if not with a default value.
+
+Return process variables to bool/number/object/string/undefined/null based on the value provided. See the index.js returnValue for more.
 
 ## Available helpers
 
