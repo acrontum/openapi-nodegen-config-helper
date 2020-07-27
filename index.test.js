@@ -18,8 +18,18 @@ test('Should return bool true from string provided', () => {
   expect(index.required('UNITTESTVALUE')).toBe(true)
 })
 
+test('Should return bool true from a provided `TRUE` string', () => {
+  process.env.UNITTESTVALUE = 'TRUE'
+  expect(index.required('UNITTESTVALUE')).toBe(true)
+})
+
 test('Should return bool false from string provided', () => {
   process.env.UNITTESTVALUE = 'false'
+  expect(index.required('UNITTESTVALUE')).toBe(false)
+})
+
+test('Should return bool false from a provided `FALSE` string', () => {
+  process.env.UNITTESTVALUE = 'FALSE'
   expect(index.required('UNITTESTVALUE')).toBe(false)
 })
 
@@ -59,6 +69,12 @@ test('Should return string false from string provided', () => {
   process.env.UNITTESTVALUE = "'false'"
   expect(index.required('UNITTESTVALUE')).toBe('false')
 })
+
+test('Should return string false from string provided', () => {
+  process.env.UNITTESTVALUE = "'false'"
+  expect(index.required('UNITTESTVALUE')).toBe('false')
+})
+
 test('Should return string true from string provided', () => {
   process.env.UNITTESTVALUE = "'true'"
   expect(index.required('UNITTESTVALUE')).toBe('true')
