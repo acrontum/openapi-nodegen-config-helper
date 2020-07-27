@@ -79,3 +79,8 @@ test('Should return string true from string provided', () => {
   process.env.UNITTESTVALUE = "'true'"
   expect(index.required('UNITTESTVALUE')).toBe('true')
 })
+
+test('should return `false` when specified env is set to false against the specified default value', () => {
+  process.env.UNITTESTVALUE = 'false',
+  expect(index.withDefault('UNITTESTVALUE', true)).toEqual(false);
+})
