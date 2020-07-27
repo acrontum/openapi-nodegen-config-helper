@@ -20,7 +20,7 @@ const self = {
     }
     if (typeof value === 'string') {
       try {
-        return JSON.parse(value)
+        return JSON.parse(/^(TRUE|FALSE)$/.test(value)? value.toLocaleLowerCase(): value)
       } catch (e) {
         if (value === '\'false\'' || value === '"false"') {
           return 'false'
