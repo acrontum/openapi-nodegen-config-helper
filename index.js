@@ -61,7 +61,7 @@ VARIABE=VALUE. You can use the provived .env-example as a template.
    * @returns {string | any | *}
    */
   withDefault: (environmentVariable, defaultValue) => {
-    return self.returnValue(process.env[environmentVariable]) || defaultValue
+    return process.env[environmentVariable] ? self.returnValue(process.env[environmentVariable]):defaultValue
   }
 }
 
