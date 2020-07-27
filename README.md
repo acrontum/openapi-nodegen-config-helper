@@ -1,5 +1,7 @@
 # openapi-nodegen-config-helper
 
+![test](https://github.com/acrontum/openapi-nodegen-config-helper/workflows/test/badge.svg)
+
 Used within the generate-it but easily used in other tools. Ensure environment variables are set or if not with a default value.
 
 Return process variables to bool/number/object/string/undefined/null based on the value provided. See the index.js returnValue for more.
