@@ -1,6 +1,6 @@
 {
   "name": "openapi-nodegen-config-helper",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "openapi-nodegen-config-helper",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/acrontum/openapi-nodegen-config-helper#readme",
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.1.0"
   }
 }
